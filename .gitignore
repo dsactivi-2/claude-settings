@@ -1,0 +1,26 @@
+# Sensitive data - DO NOT SYNC
+*.key
+*.pem
+*.token
+*secret*
+*password*
+.env
+.env.*
+
+# API Keys in CLAUDE.md werden nicht gefiltert - prüfe manuell!
+
+# Session logs (zu groß)
+*.jsonl
+projects/*/
+
+# Temporary files
+*.tmp
+*.log
+.DS_Store
+
+# Node modules (falls vorhanden)
+node_modules/
+
+# Caches
+.cache/
+*.cache

@@ -1,0 +1,191 @@
+{
+  "model": "sonnet",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionStart:universal-notification-dialog' ~/.claude/hooks/universal-notification-dialog.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionStart:claude-remote-session-start' ~/.claude/hooks/claude-remote-session-start.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionStart:load-patterns' ~/.claude/hooks/load-patterns.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionStart:session-log-start' ~/.claude/hooks/session-log-start.sh"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'PreToolUse:git-blocker' ~/.claude/hooks/git-blocker.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'PreToolUse:model-enforcer' ~/.claude/hooks/model-enforcer.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'PreToolUse:skill-inject' ~/.claude/hooks/skill-inject.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'PreToolUse:managed-prompt' ~/.claude/hooks/managed-prompt.sh task-rules"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'PreToolUse:managed-prompt' ~/.claude/hooks/managed-prompt.sh edit-rules"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'PreToolUse:block-secrets-in-code' ~/.claude/hooks/block-secrets-in-code.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'PostToolUse:context-monitor' ~/.claude/hooks/context-monitor.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'PostToolUse:edit-reviewer' ~/.claude/hooks/edit-reviewer.sh"
+          }
+        ]
+      },
+      {
+        "matcher": "TaskUpdate",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'PostToolUse:verify-task-completion' ~/.claude/hooks/post-tool-use/verify-task-completion.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'Stop:claude-remote-stop' ~/.claude/hooks/claude-remote-stop.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'Stop:stop-round-tracker' ~/.claude/hooks/stop-round-tracker.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'Stop:control-agent' ~/.claude/hooks/control-agent.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'Stop:stop-enforcer' ~/.claude/hooks/stop-enforcer.sh"
+          }
+        ]
+      }
+    ],
+    "SubagentStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'SubagentStart:subagent-context' ~/.claude/hooks/subagent-context.sh"
+          }
+        ]
+      }
+    ],
+    "SubagentStop": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'SubagentStop:subagent-round-tracker' ~/.claude/hooks/subagent-round-tracker.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'SubagentStop:subagent-enforcer' ~/.claude/hooks/subagent-enforcer.sh"
+          }
+        ]
+      }
+    ],
+    "SessionEnd": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionEnd:universal-notification-dialog' ~/.claude/hooks/universal-notification-dialog.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionEnd:git-save' ~/.claude/hooks/git-save.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionEnd:auto-sync' ~/.claude/hooks/auto-sync.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionEnd:mem-save-hook' ~/.claude/hooks/mem-save-hook.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionEnd:hook-learn' ~/.claude/hooks/hook-learn.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionEnd:session-log-end' ~/.claude/hooks/session-log-end.sh"
+          }
+        ]
+      }
+    ],
+    "PreCompact": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'PreCompact:pre-compact-memory' ~/.claude/hooks/pre-compact-memory.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "autoUpdatesChannel": "stable",
+  "skipDangerousModePermissionPrompt": true
+}
