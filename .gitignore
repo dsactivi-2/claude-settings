@@ -24,3 +24,52 @@ node_modules/
 # Caches
 .cache/
 *.cache
+cache/
+stats-cache.json
+mcp-needs-auth-cache.json
+skills-db/
+
+# Local settings
+settings.local.json
+settings.local.json.*
+auto-prompt-state
+
+# Backups
+*.backup
+*.backup-*
+backups/
+
+# Session data
+session-logs/
+paste-cache/
+image-cache/
+shell-snapshots/
+
+# Temp/debug
+debug/
+telemetry/
+tasks/
+statsig/
+todos/
+verification/
+
+# Claude-Flow specific
+.claude-flow/
+.omc/
+.omc-config.json
+
+# File history
+file-history/
+
+# Project configs
+project-configs/
+
+# Plans
+plans/
+
+# Plugins
+plugins/
+
+# Statusline
+statusline.mjs
+statusline.sh
