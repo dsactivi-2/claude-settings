@@ -37,7 +37,14 @@ auto-prompt-state
 # Backups
 *.backup
 *.backup-*
+*.backup.*
 backups/
+
+# Database files
+memory.db
+memory.db-*
+*.db
+*.sqlite
 
 # Session data
 session-logs/
