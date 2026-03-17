@@ -20,6 +20,10 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionStart:session-log-start' ~/.claude/hooks/session-log-start.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionStart:hooks-self-check' ~/.claude/hooks/hooks-self-check.sh"
           }
         ]
       }
@@ -72,6 +76,10 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/lib/hook-logger.sh 'PostToolUse:context-monitor' ~/.claude/hooks/context-monitor.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'PostToolUse:agent-error-logger' ~/.claude/hooks/agent-error-logger.sh"
           }
         ]
       },
@@ -81,6 +89,10 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/lib/hook-logger.sh 'PostToolUse:edit-reviewer' ~/.claude/hooks/edit-reviewer.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'PostToolUse:posttooluse-enforcer-v2' ~/.claude/hooks/v2/bin/posttooluse-enforcer-v2.sh"
           }
         ]
       },
@@ -113,6 +125,10 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/lib/hook-logger.sh 'Stop:stop-enforcer' ~/.claude/hooks/stop-enforcer.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'Stop:stop-enforcer-v2' ~/.claude/hooks/v2/bin/stop-enforcer-v2.sh"
           }
         ]
       }
@@ -170,6 +186,10 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionEnd:session-log-end' ~/.claude/hooks/session-log-end.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionEnd:supermemory-sync' ~/.claude/hooks/supermemory-sync.sh"
           }
         ]
       }
@@ -186,6 +206,24 @@
       }
     ]
   },
+  "enabledPlugins": {
+    "claude-reflect@claude-reflect-marketplace": true
+  },
   "autoUpdatesChannel": "stable",
-  "skipDangerousModePermissionPrompt": true
+  "skipDangerousModePermissionPrompt": true,
+  "permissions": {
+    "allow": [
+      "Bash(*)",
+      "Edit(*)",
+      "Write(*)",
+      "Read(*)",
+      "Task(*)",
+      "Glob(*)",
+      "Grep(*)",
+      "WebFetch(*)",
+      "WebSearch(*)",
+      "MultiEdit(*)"
+    ],
+    "deny": []
+  }
 }
