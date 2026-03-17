@@ -24,6 +24,10 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionStart:hooks-self-check' ~/.claude/hooks/hooks-self-check.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionStart:mem0-session-start' ~/.claude/hooks/mem0-session-start.sh"
           }
         ]
       }

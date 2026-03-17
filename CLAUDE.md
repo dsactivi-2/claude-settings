@@ -31,5 +31,17 @@ Primaer: Deutsch | Code: English
 ## Slash Commands
 `/workflow` `/mandatory-rules` `/character-profiles` `/skill-catalog`
 
+## mem0 Langzeit-Memory (PFLICHT)
+**REST API:** `http://localhost:8002` (via SSH-Tunnel, auto-start)
+**User:** `denis`
+
+**IMMER nach wichtigen Erkenntnissen speichern via `add_memory`:**
+- Gelöste Bugs + Root Cause
+- Architektur-Entscheidungen
+- Port/Config-Änderungen
+- Neue Projekte / Tech-Stack-Infos
+
+**Suchen vor komplexen Tasks:** `search_memories("relevantes Thema")`
+
 ## Backup
 Original: `~/.claude/CLAUDE.md.backup`

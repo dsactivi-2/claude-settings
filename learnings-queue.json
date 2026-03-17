@@ -1,12 +1,1 @@
-[
-  {
-    "type": "auto",
-    "message": "no https pport",
-    "timestamp": "2026-03-14T03:18:36Z",
-    "project": "/Users/dsselmanovic",
-    "patterns": "no,",
-    "confidence": 0.7999999999999999,
-    "sentiment": "correction",
-    "decay_days": 60
-  }
-]
+[]

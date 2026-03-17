@@ -1,11 +1,11 @@
 {
   "session_id": "280dd469-dcb9-4fee-aa64-cfa909b6cae8",
   "started_at": "2026-03-14T10:52:34.293238+00:00",
-  "last_seen_at": "2026-03-16T23:21:25.041284+00:00",
-  "cwd": "/Users/dsselmanovic/.ssh/RAGbyDify",
-  "repo_root": "/Users/dsselmanovic/.ssh/RAGbyDify",
-  "repo_name": "RAGbyDify",
-  "branch": "main",
+  "last_seen_at": "2026-03-17T02:07:34.401674+00:00",
+  "cwd": "/Users/dsselmanovic",
+  "repo_root": "",
+  "repo_name": "",
+  "branch": "",
   "ticket_id": "",
   "changed_files": []
 }
