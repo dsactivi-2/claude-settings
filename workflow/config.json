@@ -1,0 +1,12 @@
+{
+  "vault_dir": "/Users/dsselmanovic/Obsidian-WorkOS",
+  "events_dir": "/Users/dsselmanovic/.claude/workflow/events",
+  "state_dir": "/Users/dsselmanovic/.claude/workflow/state",
+  "daily_dir_name": "01-Daily",
+  "tickets_dir_name": "03-Tickets",
+  "projects_dir_name": "02-Projects",
+  "decisions_dir_name": "04-Decisions",
+  "logs_dir_name": "05-Logs",
+  "default_project": "general",
+  "default_owner": "dsselmanovic"
+}

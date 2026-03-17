@@ -1,0 +1,63 @@
+layout {
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:tab-bar"
+        }
+        children
+        pane size=2 borderless=true {
+            plugin location="zellij:status-bar"
+        }
+    }
+
+    tab name="Agent" focus=true {
+        pane split_direction="vertical" {
+            pane size="70%" {
+                command "zsh"
+                args "-lc" "cd ~ && clear && echo 'Agent / Coding Pane'"
+            }
+            pane {
+                command "zsh"
+                args "-lc" "python3 ~/.claude/workflow/sync-agent.py status; echo; echo 'Use wf-start / wf-stop / wf-daily'"
+            }
+        }
+    }
+
+    tab name="Git" {
+        pane split_direction="vertical" {
+            pane {
+                command "zsh"
+                args "-lc" "cd ~ && git status 2>/dev/null || echo 'No repo in current dir'"
+            }
+            pane {
+                command "zsh"
+                args "-lc" "command -v lazygit >/dev/null 2>&1 && lazygit || echo 'lazygit not installed'"
+            }
+        }
+    }
+
+    tab name="Notes" {
+        pane split_direction="vertical" {
+            pane {
+                command "zsh"
+                args "-lc" "ls -la ~/Obsidian-WorkOS 2>/dev/null || echo 'Run wf-init first'"
+            }
+            pane {
+                command "zsh"
+                args "-lc" "python3 ~/.claude/workflow/sync-agent.py daily"
+            }
+        }
+    }
+
+    tab name="Logs" {
+        pane split_direction="vertical" {
+            pane {
+                command "zsh"
+                args "-lc" "tail -n 20 ~/.claude/workflow/events/events.jsonl 2>/dev/null || echo 'No events yet'"
+            }
+            pane {
+                command "zsh"
+                args "-lc" "ls -la ~/.claude/workflow/state"
+            }
+        }
+    }
+}
