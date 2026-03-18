@@ -124,6 +124,10 @@
           },
           {
             "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'Stop:stop-session-state' ~/.claude/hooks/stop-session-state.sh"
+          },
+          {
+            "type": "command",
             "command": "~/.claude/hooks/lib/hook-logger.sh 'Stop:control-agent' ~/.claude/hooks/control-agent.sh"
           },
           {
@@ -194,6 +198,10 @@
           {
             "type": "command",
             "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionEnd:supermemory-sync' ~/.claude/hooks/supermemory-sync.sh"
+          },
+          {
+            "type": "command",
+            "command": "~/.claude/hooks/lib/hook-logger.sh 'SessionEnd:mem0-session-end' ~/.claude/hooks/mem0-session-end.sh"
           }
         ]
       }
