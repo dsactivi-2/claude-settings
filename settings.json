@@ -237,5 +237,17 @@
       "MultiEdit(*)"
     ],
     "deny": []
+  },
+  "mcpServers": {
+    "lead-scraper-mcp": {
+      "command": "/Users/dsselmanovic/activi-dev-repos/lead-housefinder-unified/node_modules/.bin/tsx",
+      "args": [
+        "/Users/dsselmanovic/activi-dev-repos/lead-scraper-mcp/src/server.ts"
+      ],
+      "env": {
+        "NODE_ENV": "production",
+        "DATA_DIR": "/Users/dsselmanovic/.lead-housefinder-data"
+      }
+    }
   }
 }
